@@ -1,0 +1,11 @@
+.backdrop {
+  height: calc(100vh - 90px);
+  background-image: url("/assets/sections/home/banner.jpg");
+  background-position: -200px -90px;
+}
+
+@media (max-width: 1074px) {
+  .backdrop {
+    background-position: -300px -90px;
+  }
+}

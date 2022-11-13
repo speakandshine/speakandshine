@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", "Comfortaa" -apple-system, BlinkMacSystemFont, Roboto,
+    Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  color: #535353;
+  font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* FONTS / HEADINGS */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Comfortaa";
+  margin: 0px 0px 0px 0px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+}
+
+label {
+  font-size: 14px;
+}
+
+/* HTML ELEMENTS */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* GLOBAL VARS */
+.shadow-border {
+  box-shadow: 0 1px 10px rgb(0 0 0 / 0.2);
+}
+
+@media (max-width: 1074px) {
+  html,
+  body {
+    font-size: 9px;
+  }
+  h1 {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 12px;
+  }
+
+  h3 {
+    font-size: 11px;
+  }
+
+  h4 {
+    font-size: 9px;
+  }
+
+  p {
+    font-size: 9px;
+  }
+
+  label {
+    font-size: 9px;
+  }
+}
