@@ -11,12 +11,11 @@ export interface IServicesProps {
 function Services(props: IServicesProps) {
   return (
     <>
-      <div className="mb-[20px]">
-        <h1 className="col-span-1 text-center flex justify-center items-center text-big-heading-mobile laptop:text-big-heading">
-          Speech Therapy
-        </h1>
-      </div>
-      <div className="laptop:grid laptop:grid-cols-2 p-[40px] bg-secondary-yellow">
+      <h1 className="col-span-1 text-center flex justify-center items-center text-big-heading-mobile laptop:text-big-heading">
+        Speech Therapy
+      </h1>
+      <br />
+      <div className="laptop:grid laptop:grid-cols-2 p-[20px] bg-secondary-yellow">
         <div className="col-span-1">
           <h2> Learning Areas </h2>
           <p>
@@ -88,16 +87,17 @@ function Services(props: IServicesProps) {
             </Button>
           </div>
         </div>
-        <div className="hidden laptop:flex col-span-1 items-start justify-center">
+        <div className="hidden laptop:flex col-span-1 items-center justify-center">
           <FilledImage
             src="/assets/sections/services/speech-therapy.jpg"
+            imageStyle={{ borderRadius: "10px" }}
             alt=""
             height={300}
             aspectRatio={ASPECT_RATIO_SERVICES_SPEECH_THERAPY}
           />
         </div>
       </div>
-      <div className="p-[40px] pb-[0px]">
+      <div className="p-[20px] pb-[0px]">
         <h2> Assessment </h2>
         <p>
           An initial assessment will take place during your first appointment.
@@ -124,7 +124,7 @@ function Services(props: IServicesProps) {
           </li>
         </ul>
       </div>
-      <div className="p-[40px]">
+      <div className="p-[20px]">
         <h2> Therapy </h2>
         <ul>
           <li className="list-disc ml-[30px]">

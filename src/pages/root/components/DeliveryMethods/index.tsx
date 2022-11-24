@@ -32,7 +32,7 @@ function DeliveryMethods(props: IDeliveryMethodsProps) {
           servicing Sydney and the greater Sydney region.
         </div>
       </div>
-      <div className="flex flex-col laptop:grid laptop:grid-cols-3 laptop:gap-4 space-y-[15px] laptop:space-y-0 p-[40px]">
+      <div className="flex flex-col laptop:grid laptop:grid-cols-3 laptop:gap-4 space-y-[15px] laptop:space-y-0 p-[20px]">
         <DeliveryMethod
           title="Mobile Therapy"
           subtitle="(In-home / school visits)"

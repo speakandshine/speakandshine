@@ -22,18 +22,18 @@ const Resource = React.forwardRef((props: IResourceSectionProps, ref) => {
             ? `/assets/sections/resources/${resource}.pdf`
             : resource
         }
-        className="col-span-1 grid grid-cols-4 w-full p-[10px] rounded-[8px] cursor-pointer"
+        className="col-span-1 flex space-x-1 w-full p-[10px] rounded-[8px] cursor-pointer"
       >
         <i
-          className={`col-span-1 flex items-center border-shadow text-[20px] p-[5px] rounded-[5px] ${
+          className={`col-span-1 flex border-shadow text-[20px] p-[5px] rounded-[5px] ${
             type === "pdf" ? "text-red" : "text-secondary-blue"
           }`}
         >
           {type === "pdf" ? <AiFillFilePdf /> : <BsGlobe />}{" "}
         </i>
-        <p className="col-span-3 flex items-center font-bold">{title}</p>
+        <p className="col-span-3">{title}</p>
       </a>
-      <div className="col-span-2 flex flex-col justify-center">
+      <div className="col-span-1 flex flex-col justify-center">
         {description}
       </div>
     </>

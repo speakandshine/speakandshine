@@ -41,7 +41,7 @@ const Button = React.forwardRef((props: IButtonProps, ref) => {
   return (
     <button
       onClick={onClick}
-      className={`p-[15px] rounded-[10px] ${getVariantStyle()} ${getFloatingStyle()} ${getDisabledStyle()}`}
+      className={`p-[15px] rounded-[10px] h-full ${getVariantStyle()} ${getFloatingStyle()} ${getDisabledStyle()}`}
       disabled={disabled}
     >
       <div className="flex flex-col items-center justify-center">
@@ -55,7 +55,7 @@ const Button = React.forwardRef((props: IButtonProps, ref) => {
             </i>
           )}
 
-          <h3 className={`${variant === "booking" ? "" : ""}`}>{children}</h3>
+          <h4 className={`${variant === "booking" ? "" : ""}`}>{children}</h4>
         </div>
         {selected && variant !== "booking" && (
           <div className="h-[5px] w-full bg-primary-yellow rounded-[10px]" />

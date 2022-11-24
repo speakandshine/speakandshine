@@ -17,7 +17,9 @@ const Section = forwardRef((props: ISectionProps, ref) => {
             {props.title}
           </h1>
         </div>
-        <div className="p-[10px] pt-[20px]">{props.children}</div>
+        <div className="p-[15px] pt-[20px] laptop:p-[25px]">
+          {props.children}
+        </div>
       </div>
     </FadeIn>
   );

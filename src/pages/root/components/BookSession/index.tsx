@@ -99,15 +99,15 @@ function BookSession(props: IBookSessionProps) {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center laptop:grid laptop:grid-cols-2 p-[30px] pt-[10px]">
+      <div className="flex flex-col justify-center items-center laptop:grid laptop:grid-cols-2">
         {!formSubmitted && !formError && (
-          <div className="p-[30px] bg-secondary-yellow rounded-[20px]">
+          <div className="p-[20px] bg-secondary-yellow rounded-[20px]">
             <h2 className=""> Fill in the form below to start the process! </h2>
             <div className="grid grid-cols-6 gap-[10px] p-[10px]">
               <div className="col-span-3">
                 <Textfield
                   value={firstName}
-                  placeholder="Enter your first name"
+                  placeholder="First name"
                   onChange={(e: any) => setFirstName(e.target.value)}
                   disabled={isInputDisabled()}
                 />
@@ -116,15 +116,15 @@ function BookSession(props: IBookSessionProps) {
               <div className="col-span-3">
                 <Textfield
                   value={lastName}
-                  placeholder="Enter your last name"
+                  placeholder="Last name"
                   onChange={(e: any) => setLastName(e.target.value)}
                   disabled={isInputDisabled()}
                 />
               </div>
-              <div className="col-span-3">
+              <div className="col-span-6 laptop:col-span-3">
                 <Textfield
                   value={email}
-                  placeholder="Enter your email"
+                  placeholder="Email address"
                   onChange={(e: any) => setEmail(e.target.value)}
                   disabled={isInputDisabled()}
                 />
@@ -132,7 +132,7 @@ function BookSession(props: IBookSessionProps) {
               <div className="col-span-3">
                 <Textfield
                   value={phoneNumber}
-                  placeholder="Enter your phone number"
+                  placeholder="Phone number"
                   onChange={(e: any) => setPhoneNumber(e.target.value)}
                   disabled={isInputDisabled()}
                 />
@@ -140,13 +140,13 @@ function BookSession(props: IBookSessionProps) {
               <div className="col-span-3">
                 <Textfield
                   value={suburb}
-                  placeholder="Enter your suburb"
+                  placeholder="Suburb"
                   onChange={(e: any) => setSuburb(e.target.value)}
                   disabled={isInputDisabled()}
                 />
               </div>
               <div className="col-span-3"></div>
-              <div className="col-span-3">
+              <div className="col-span-6 laptop:col-span-3">
                 <Textfield
                   value={clientName}
                   placeholder="Name of person wanting services"
@@ -154,7 +154,7 @@ function BookSession(props: IBookSessionProps) {
                   disabled={isInputDisabled()}
                 />
               </div>
-              <div className="col-span-3">
+              <div className="col-span-6 laptop:col-span-3">
                 <Textfield
                   value={clientAge}
                   placeholder="Age of person wanting services"
@@ -241,9 +241,9 @@ function BookSession(props: IBookSessionProps) {
               {formSubmitting && <Loader height={40} />}
             </div>
             <div className="text-center mt-[15px]">
-              <p>We offer a 10-minute introducation call to all new clients.</p>
               <p>
-                We{"'"}ll discuss preference and availability and match you with
+                We offer a 10-minute introducation call to all new clients. We
+                {"'"}ll discuss preference and availability and match you with
                 the Speech Pathologist that best suits your child{"'"}s needs.
               </p>
             </div>
@@ -267,8 +267,8 @@ function BookSession(props: IBookSessionProps) {
             <h2>Please refresh to try again!</h2>
           </div>
         )}
-        <div className="flex flex-col p-[30px] h-full">
-          <div className="p-[20px] pt-[0px]">
+        <div className="flex flex-col p-[20px] h-full">
+          <div className="px-[20px]">
             <h2> Service Area </h2>
             <div>
               At Speak & Shine, our mobile speech therapy team is currently
@@ -283,7 +283,8 @@ function BookSession(props: IBookSessionProps) {
               />
             </div>
           </div>
-          <div className="p-[20px] ">
+          <br />
+          <div className="px-[20px]">
             <h2> Contact Us </h2>
             <div className="flex flex-col space-y-6">
               <div className="flex  items-center space-x-4 p-[10px]">

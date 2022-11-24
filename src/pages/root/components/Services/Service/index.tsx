@@ -19,16 +19,24 @@ const Service = forwardRef((props: IServiceProps, ref) => {
   return (
     <div>
       <div
-        className="flex space-x-4 items-center cursor-pointer"
+        className="flex space-x-2 items-center cursor-pointer"
         onClick={toggleDropdown}
       >
-        {!open && <AiFillCaretDown className="text-[22px]" />}
-        {open && <AiFillCaretRight className="text-[22px]" />}
+        {!open && (
+          <h4>
+            <AiFillCaretDown />
+          </h4>
+        )}
+        {open && (
+          <h4>
+            <AiFillCaretRight />
+          </h4>
+        )}
         <h4>{props.title}</h4>
       </div>
       {open && (
         <FadeIn title="">
-          <div className="ml-[34px]">{props.description}</div>{" "}
+          <div className="ml-[25px]"> {props.description}</div>
         </FadeIn>
       )}
     </div>

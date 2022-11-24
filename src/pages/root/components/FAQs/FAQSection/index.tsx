@@ -12,7 +12,7 @@ const FAQSection = React.forwardRef((props: IResourceSectionProps, ref) => {
   const { title, children, customClass } = props;
   return (
     <div
-      className={`flex flex-col col-span-1 p-[30px] pb-[10px] ${customClass}`}
+      className={`flex flex-col col-span-1 p-[20px] pb-[10px] ${customClass}`}
     >
       <h2> {title} </h2>
       <br />

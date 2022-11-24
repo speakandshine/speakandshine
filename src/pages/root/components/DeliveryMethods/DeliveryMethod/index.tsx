@@ -12,8 +12,8 @@ export interface IDeliveryMethodProps {
 const DeliveryMethod = React.forwardRef((props: IDeliveryMethodProps, ref) => {
   const { title, subtitle, children, icons, button } = props;
   return (
-    <div className="grid grid-rows-6 border-divider border-solid laptop:border-r-[5px] laptop:border-b-0 border-b-[5px] p-[10px] rounded-[20px]">
-      <div className="row-span-2 flex flex-col items-center justify-center">
+    <div className="grid grid-rows-5 border-divider border-solid laptop:border-r-[5px] laptop:border-b-0 border-b-[5px] p-[10px] rounded-[20px]">
+      <div className="row-span-1 flex flex-col items-center justify-center">
         <div className="flex space-x-10">
           {icons?.map((icon, index) => {
             return (

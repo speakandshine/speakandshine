@@ -10,7 +10,7 @@ body {
     Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
   color: #535353;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 * {
@@ -33,19 +33,19 @@ h1 {
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 h4 {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 label {
@@ -61,34 +61,4 @@ a {
 /* GLOBAL VARS */
 .shadow-border {
   box-shadow: 0 1px 10px rgb(0 0 0 / 0.2);
-}
-
-@media (max-width: 1074px) {
-  html,
-  body {
-    font-size: 9px;
-  }
-  h1 {
-    font-size: 16px;
-  }
-
-  h2 {
-    font-size: 12px;
-  }
-
-  h3 {
-    font-size: 11px;
-  }
-
-  h4 {
-    font-size: 9px;
-  }
-
-  p {
-    font-size: 9px;
-  }
-
-  label {
-    font-size: 9px;
-  }
 }
