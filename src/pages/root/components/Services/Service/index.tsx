@@ -9,7 +9,7 @@ export interface IServiceProps {
   changeBackground?: boolean;
 }
 
-const Service = forwardRef((props: IServiceProps, ref) => {
+const Service = (props: IServiceProps) => {
   const [open, setOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -18,23 +18,28 @@ const Service = forwardRef((props: IServiceProps, ref) => {
 
   return (
     <div>
-      <div
-        className="flex space-x-4 items-center cursor-pointer"
-        onClick={toggleDropdown}
-      >
-        {!open && <AiFillCaretDown className="text-[22px]" />}
-        {open && <AiFillCaretRight className="text-[22px]" />}
-        <h4>{props.title}</h4>
+      <div className="flex space-x-2 items-center">
+        {!open && (
+          <div className="text-[16px] cursor-pointer" onClick={toggleDropdown}>
+            <AiFillCaretDown />
+          </div>
+        )}
+        {open && (
+          <div className="text-[16px] cursor-pointer" onClick={toggleDropdown}>
+            <AiFillCaretRight />
+          </div>
+        )}
+        <h4 className="cursor-pointer" onClick={toggleDropdown}>
+          {props.title}
+        </h4>
       </div>
       {open && (
         <FadeIn title="">
-          <div className="ml-[34px]">{props.description}</div>{" "}
+          <div className="ml-[25px]"> {props.description}</div>
         </FadeIn>
       )}
     </div>
   );
-});
-
-Service.displayName = "Service";
+};
 
 export default Service;

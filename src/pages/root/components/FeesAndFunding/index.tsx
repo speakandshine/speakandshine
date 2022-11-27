@@ -15,16 +15,12 @@ export interface IFeesAndFundingProps {
   bookSessionRef: any;
 }
 
-function FeesAndFunding(props: IFeesAndFundingProps) {
+const FeesAndFunding = (props: IFeesAndFundingProps) => {
   return (
     <>
-      <div className="text-center">
-        <h2> Your options </h2>
-      </div>
-      <div className="flex flex-col laptop:grid laptop:grid-cols-4 laptop:gap-9 space-y-[15px] laptop:space-y-0 p-[30px]">
+      <div className="flex flex-col laptop:grid laptop:grid-cols-4 laptop:gap-9 space-y-[15px] laptop:space-y-0 p-[20px]">
         <FundingMethod
           title="Medicare"
-          subtitle=""
           icons={[
             <FilledImage
               src="/assets/sections/feesAndFunding/Medicare.png"
@@ -43,7 +39,6 @@ function FeesAndFunding(props: IFeesAndFundingProps) {
         </FundingMethod>
         <FundingMethod
           title="NDIS"
-          subtitle=""
           icons={[
             <FilledImage
               src="/assets/sections/feesAndFunding/NDIS.png"
@@ -55,13 +50,12 @@ function FeesAndFunding(props: IFeesAndFundingProps) {
           ]}
         >
           <div>
-            We provide speech therapy and music therapy for clients who are
-            self-managed, and plan-managed
+            We provide speech therapy for clients who are self-managed, and
+            plan-managed.
           </div>
         </FundingMethod>
         <FundingMethod
           title="Private health insurance"
-          subtitle=""
           icons={[<MdHealthAndSafety key={uuidv4()} />]}
         >
           <div>
@@ -71,13 +65,12 @@ function FeesAndFunding(props: IFeesAndFundingProps) {
         </FundingMethod>
         <FundingMethod
           title="Self-funded"
-          subtitle=""
           icons={[<RiMoneyDollarCircleFill key={uuidv4()} />]}
         >
-          <div> Privately funded speech therapy and music therapy.</div>
+          <div> Privately funded speech therapy.</div>
         </FundingMethod>
       </div>
-      <div className="bg-secondary-yellow p-[30px] m-[20px]">
+      <div className="bg-secondary-yellow p-[20px]">
         <h2> Cancellation Policy </h2>
         <div className="text-left my-[10px]">
           <ul className="list-disc ml-[30px]">
@@ -88,10 +81,6 @@ function FeesAndFunding(props: IFeesAndFundingProps) {
             <li>
               Cancellations made with less than 48 hours notice will incur the
               full cost.
-            </li>
-            <li>
-              No cancellation policy is effective for Saturday appointments
-              falling during the school term.
             </li>
             <li>
               Our cancellation fees are also outlined in your Service Agreement.
@@ -115,6 +104,6 @@ function FeesAndFunding(props: IFeesAndFundingProps) {
       </div>
     </>
   );
-}
+};
 
 export default FeesAndFunding;

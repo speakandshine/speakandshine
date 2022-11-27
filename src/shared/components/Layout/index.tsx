@@ -4,19 +4,19 @@ import styles from "./Layout.module.css";
 import { scrollToSection } from "src/shared/helpers/scroll";
 import Button from "src/shared/components/Button";
 import { v4 as uuidv4 } from "uuid";
-import Navbar from "../Navbar";
-import { AiFillCloseCircle } from "react-icons/ai";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export interface ILayoutProps {
   children?: React.ReactNode;
   sections: any[];
 }
 
-function Layout(props: ILayoutProps) {
+const Layout = (props: ILayoutProps) => {
+  const { children, sections } = props;
   const [mobileDrawerOpen, toggleMobileDrawerOpen] = React.useState(false);
-  const [bannerOpen, toggleBannerOpen] = React.useState(true);
 
-  const MenuItems = props.sections.map((section) => {
+  const MenuItems = sections.map((section) => {
     return section.title === "Book a Session" ? (
       <div className="flex flex-col items-center" key={uuidv4()}>
         <Button
@@ -65,12 +65,12 @@ function Layout(props: ILayoutProps) {
       )}
 
       {/* MAIN CONTENT */}
-      <main className="mt-[90px]">{props.children}</main>
+      <main className="mt-[90px]">{children}</main>
 
       {/* FOOTER */}
-      <footer className=""></footer>
+      <Footer sections={sections} />
     </>
   );
-}
+};
 
 export default Layout;

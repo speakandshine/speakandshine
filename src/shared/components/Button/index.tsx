@@ -1,8 +1,8 @@
-import * as React from "react";
+import { ReactNode } from "react";
 import { BsCalendarCheck } from "react-icons/bs";
 export interface IButtonProps {
   variant: "standard" | "action" | "booking";
-  children?: React.ReactNode;
+  children?: ReactNode;
   ref?: any;
   onClick: any;
   floating?: boolean;
@@ -11,7 +11,7 @@ export interface IButtonProps {
   icon?: any;
 }
 
-const Button = React.forwardRef((props: IButtonProps, ref) => {
+const Button = (props: IButtonProps) => {
   const { onClick, children, variant, floating, selected, disabled, icon } =
     props;
 
@@ -41,7 +41,7 @@ const Button = React.forwardRef((props: IButtonProps, ref) => {
   return (
     <button
       onClick={onClick}
-      className={`p-[15px] rounded-[10px] ${getVariantStyle()} ${getFloatingStyle()} ${getDisabledStyle()}`}
+      className={`p-[15px] rounded-[10px] h-full ${getVariantStyle()} ${getFloatingStyle()} ${getDisabledStyle()}`}
       disabled={disabled}
     >
       <div className="flex flex-col items-center justify-center">
@@ -55,7 +55,7 @@ const Button = React.forwardRef((props: IButtonProps, ref) => {
             </i>
           )}
 
-          <h3 className={`${variant === "booking" ? "" : ""}`}>{children}</h3>
+          <h4 className={`${variant === "booking" ? "" : ""}`}>{children}</h4>
         </div>
         {selected && variant !== "booking" && (
           <div className="h-[5px] w-full bg-primary-yellow rounded-[10px]" />
@@ -63,8 +63,6 @@ const Button = React.forwardRef((props: IButtonProps, ref) => {
       </div>
     </button>
   );
-});
-
-Button.displayName = "FadeIn";
+};
 
 export default Button;

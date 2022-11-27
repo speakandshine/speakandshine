@@ -21,16 +21,16 @@ const Home = forwardRef((props: IHomeProps, ref) => {
           <div className="h-full p-[15px] z-[2] bg-primary-yellow text-center text-black font-bold flex justify-center items-center">
             <div className="grid grid-cols-12 w-full">
               <div className="col-span-1"> </div>
-              <h1 className="col-span-10">
+              <h1 className="col-span-10 text-[16px] laptop:text-[24px]">
                 Book a session now to secure appointments for 2023!
               </h1>
               <div className="col-span-1 flex justify-center items-center ">
-                <h1
-                  className="cursor-pointer"
+                <div
+                  className="cursor-pointer text-[24px]"
                   onClick={() => setBannerOpen(false)}
                 >
                   <AiFillCloseCircle />
-                </h1>
+                </div>
               </div>
             </div>
           </div>
@@ -38,13 +38,13 @@ const Home = forwardRef((props: IHomeProps, ref) => {
       </div>
       <div className="flex text-center flex-col justify-center items-center h-full w-full bg-black/40 space-y-3 p-[10px]">
         <h1 className="text-primary-yellow font-bold text-[30px] laptop:text-[50px]">
-          Mobile Speech Therapy in Sydney
+          Mobile Speech Therapy Sydney
         </h1>
         <h2 className="text-white font-bold text-[20px] laptop:text-[30px]">
-          Learning... made easy!
+          Speak to Succeed
         </h2>
         <h3 className="text-white text-[12px] laptop:text-[20px]">
-          Access speech pathology for kids aged 1 to 14
+          Access speech pathology for children (1 - 18yrs old)
         </h3>
         <div className="text-center space-x-5">
           <Button

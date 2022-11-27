@@ -1,39 +1,34 @@
-import * as React from "react";
+import { ReactNode } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-export interface IDeliveryMethodProps {
+export interface IFundingMethodProps {
   title: string;
-  subtitle: string;
-  children: React.ReactNode;
+  subtitle?: string;
+  children: ReactNode;
   icons?: any[];
 }
 
-const FundingMethod = React.forwardRef((props: IDeliveryMethodProps, ref) => {
+const FundingMethod = (props: IFundingMethodProps) => {
   const { title, subtitle, children, icons } = props;
   return (
     <div
-      className={`flex flex-col col-span-1 items-center p-[10px] pt-[20px] border-divider border-solid laptop:border-r-[5px] laptop:border-b-0 border-b-[5px] rounded-[20px]`}
+      className={`col-span-1 grid grid-rows-4 gap-[10px] border-divider border-solid laptop:border-r-[5px] laptop:border-b-0 border-b-[5px] rounded-[20px] pr-[10px] text-center`}
     >
-      <div className="flex space-x-10">
-        {icons?.map((icon, index) => {
+      <div className="row-span-1 flex justify-center items-center">
+        {icons?.map((icon) => {
           return (
-            <i key={uuidv4()} className="text-icon text-secondary-blue">
-              {" "}
-              {icon}{" "}
-            </i>
+            <div key={uuidv4()} className="text-icon text-secondary-blue">
+              {icon}
+            </div>
           );
         })}
       </div>
-      <br />
-      <h1 className="text-center"> {title} </h1>
-      <h1 className={`text-center`}> {subtitle}</h1>
-      <br />
-      <div className="col-span-1">{children}</div>
-      <br />
+      <h1 className="row-span-1 flex justify-center items-center text-center">
+        {title}
+      </h1>
+      <div className="row-span-2">{children}</div>
     </div>
   );
-});
-
-FundingMethod.displayName = "FundingMethod";
+};
 
 export default FundingMethod;
