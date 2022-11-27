@@ -64,11 +64,15 @@ const DeliveryMethods = (props: IDeliveryMethodsProps) => {
           </div>
           <br />
           <div>
-            Traveling charges may vary on the distance from the clinic to the
-            location.
+            <label>
+              - Traveling charges may vary on the distance from the clinic to
+              the location.
+            </label>
           </div>
           <div>
-            Contact us for further information regarding traveling charges.{" "}
+            <label>
+              - Contact us for further information regarding traveling charges.{" "}
+            </label>
           </div>
         </DeliveryMethod>
         <DeliveryMethod
@@ -117,8 +121,14 @@ const DeliveryMethods = (props: IDeliveryMethodsProps) => {
             is flexibility when it comes to the format of running the screen.
           </div>
           <br />
-          <div>The cost will vary depending on your school’s needs.</div>
-          <div>Please contact us for further information. </div>
+          <div>
+            <label>
+              - The cost will vary depending on your school’s needs.
+            </label>
+          </div>
+          <div>
+            <label> - Please contact us for further information.</label>
+          </div>
         </DeliveryMethod>
       </div>
     </>

@@ -50,8 +50,8 @@ const FeesAndFunding = (props: IFeesAndFundingProps) => {
           ]}
         >
           <div>
-            We provide speech therapy and music therapy for clients who are
-            self-managed, and plan-managed
+            We provide speech therapy for clients who are self-managed, and
+            plan-managed.
           </div>
         </FundingMethod>
         <FundingMethod

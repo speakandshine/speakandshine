@@ -22,7 +22,7 @@ const Navbar = (props: INavbarProps) => {
       <div className="grid grid-cols-4 laptop:hidden w-full h-full items-center">
         <div className="col-span-1" />
         <div
-          className="flex justify-center col-span-2"
+          className="flex justify-center col-span-2 cursor-pointer"
           onClick={() => scrollToSection()}
         >
           <FilledImage
@@ -49,7 +49,7 @@ const Navbar = (props: INavbarProps) => {
       {/* DESKTOP */}
       <div className="hidden laptop:grid grid-cols-5 items-center">
         <div
-          className="col-span-1 flex justify-center"
+          className="col-span-1 flex justify-center cursor-pointer"
           onClick={() => scrollToSection()}
         >
           <FilledImage

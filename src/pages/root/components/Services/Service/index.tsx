@@ -18,21 +18,20 @@ const Service = (props: IServiceProps) => {
 
   return (
     <div>
-      <div
-        className="flex space-x-2 items-center cursor-pointer"
-        onClick={toggleDropdown}
-      >
+      <div className="flex space-x-2 items-center">
         {!open && (
-          <div className="text-[16px]">
+          <div className="text-[16px] cursor-pointer" onClick={toggleDropdown}>
             <AiFillCaretDown />
           </div>
         )}
         {open && (
-          <div className="text-[16px]">
+          <div className="text-[16px] cursor-pointer" onClick={toggleDropdown}>
             <AiFillCaretRight />
           </div>
         )}
-        <h4>{props.title}</h4>
+        <h4 className="cursor-pointer" onClick={toggleDropdown}>
+          {props.title}
+        </h4>
       </div>
       {open && (
         <FadeIn title="">

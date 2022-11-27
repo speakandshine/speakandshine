@@ -96,7 +96,7 @@ const Root: NextPage = () => {
           <Resources />
         </Section>
         <Section title={sections[6].title} ref={s6Ref}>
-          <FAQs bookSessionRef={s7Ref} />
+          <FAQs bookSessionRef={s7Ref} feesAndFundingRef={s4Ref} />
         </Section>
         <Section title={sections[7].title} ref={s7Ref}>
           <BookSession />

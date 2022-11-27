@@ -11,7 +11,7 @@ const Checkbox = (props: ICheckboxProps) => {
     <div>
       <input
         type="checkbox"
-        className="focus:outline-primary-yellow"
+        className="focus:outline-primary-yellow cursor-pointer"
         checked={checked}
         onChange={onChange}
         value={value}
