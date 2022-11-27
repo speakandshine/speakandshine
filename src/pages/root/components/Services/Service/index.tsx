@@ -9,7 +9,7 @@ export interface IServiceProps {
   changeBackground?: boolean;
 }
 
-const Service = forwardRef((props: IServiceProps, ref) => {
+const Service = (props: IServiceProps) => {
   const [open, setOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -23,14 +23,14 @@ const Service = forwardRef((props: IServiceProps, ref) => {
         onClick={toggleDropdown}
       >
         {!open && (
-          <h4>
+          <div className="text-[16px]">
             <AiFillCaretDown />
-          </h4>
+          </div>
         )}
         {open && (
-          <h4>
+          <div className="text-[16px]">
             <AiFillCaretRight />
-          </h4>
+          </div>
         )}
         <h4>{props.title}</h4>
       </div>
@@ -41,8 +41,6 @@ const Service = forwardRef((props: IServiceProps, ref) => {
       )}
     </div>
   );
-});
-
-Service.displayName = "Service";
+};
 
 export default Service;

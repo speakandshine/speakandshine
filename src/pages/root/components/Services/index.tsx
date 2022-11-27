@@ -8,7 +8,7 @@ export interface IServicesProps {
   bookSessionRef: any;
 }
 
-function Services(props: IServicesProps) {
+const Services = (props: IServicesProps) => {
   return (
     <>
       <h1 className="col-span-1 text-center flex justify-center items-center text-big-heading-mobile laptop:text-big-heading">
@@ -18,10 +18,10 @@ function Services(props: IServicesProps) {
       <div className="laptop:grid laptop:grid-cols-2 p-[20px] bg-secondary-yellow">
         <div className="col-span-1">
           <h2> Learning Areas </h2>
-          <p>
+          <div>
             At Speak & Shine we aim to supports individuals in areas of
             communication, feeding and swallowing including:
-          </p>
+          </div>
           <div className="flex flex-col space-y-4 p-[15px]">
             <Service
               title="Articulation"
@@ -99,12 +99,12 @@ function Services(props: IServicesProps) {
       </div>
       <div className="p-[20px] pb-[0px]">
         <h2> Assessment </h2>
-        <p>
+        <div>
           An initial assessment will take place during your first appointment.
           Assessment sessions are one hour in duration, however depending on the
           needs of your child, assessments can take multiple sessions to
           complete.
-        </p>
+        </div>
         <br />
         <ul>
           The assessment process includes:
@@ -155,6 +155,6 @@ function Services(props: IServicesProps) {
       </div>
     </>
   );
-}
+};
 
 export default Services;

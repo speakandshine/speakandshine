@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { useRef } from "react";
 import { useIntersection } from "src/shared/helpers/viewport";
-import { scrollToSection } from "src/shared/helpers/scroll";
 
 import Layout from "src/shared/components/Layout";
 import Section from "src/shared/components/Section";
@@ -11,7 +10,6 @@ import FeesAndFunding from "./components/FeesAndFunding";
 import Resources from "./components/Resources";
 import AboutUs from "./components/AboutUs";
 import BookSession from "./components/BookSession";
-import Button from "src/shared/components/Button";
 import Home from "./components/Home";
 import FAQs from "./components/FAQs";
 
@@ -98,10 +96,10 @@ const Root: NextPage = () => {
           <Resources />
         </Section>
         <Section title={sections[6].title} ref={s6Ref}>
-          <FAQs />
+          <FAQs bookSessionRef={s7Ref} />
         </Section>
         <Section title={sections[7].title} ref={s7Ref}>
-          <BookSession ref={s7Ref} />
+          <BookSession />
         </Section>
       </div>
     </Layout>

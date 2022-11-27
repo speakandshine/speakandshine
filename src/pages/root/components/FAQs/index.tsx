@@ -3,9 +3,11 @@ import FAQSection from "./FAQSection";
 import FAQ from "./FAQ";
 import Resource from "../Resources/Resource";
 
-export interface IFeesAndFundingProps {}
+export interface IFAQsProps {
+  bookSessionRef: any;
+}
 
-function FAQs(props: IFeesAndFundingProps) {
+const FAQs = (props: IFAQsProps) => {
   return (
     <>
       <h1 className="text-center">Frequently Asked Questions</h1>
@@ -94,49 +96,45 @@ function FAQs(props: IFeesAndFundingProps) {
         </FAQ>
         <FAQ question="What are your methods of payment? ">
           <div>
-            {" "}
-            Refer to the{" "}
-            <span className="font-bold underline">
-              Fees and Funding{" "}
-            </span> page{" "}
+            Refer to the
+            <span className="font-bold underline">Fees and Funding</span> page
           </div>
         </FAQ>
       </FAQSection>
       <FAQSection title="5. General Questions">
         <FAQ question="How do I book? ">
-          Book through this website.{" "}
-          <span className="font-bold underline">Click here</span> to book.
+          <div>
+            Book through this website.
+            <span className="font-bold underline">Click here</span> to book.
+          </div>
         </FAQ>
         <FAQ question="How long does therapy last? ">
-          {" "}
           <div>
-            {" "}
             Therapy can range from 30 - 120 mins depending on your child{"'"}s
-            specific needs.{" "}
-          </div>{" "}
+            specific needs.
+          </div>
         </FAQ>
         <FAQ question="How many sessions will my child need to do? ">
-          {" "}
           <div>
-            {" "}
             Total number of sessions will depend on each individual child. We
             will complete a full assessment for the first session. The
             assessment will provide the speech pathologist with the information
-            to form a plan and set the amount of therapy needed for the child.{" "}
+            to form a plan and set the amount of therapy needed for the child.
           </div>
         </FAQ>
         <FAQ question="What are the hours?">
-          {" "}
-          <div> Business hours are from 9am to 7pm</div>{" "}
+          <div> Business hours are from 9am to 7pm</div>
         </FAQ>
         <FAQ question="What is your cancellation policy? ">
-          Refer to the cancellation policy{" "}
-          <span className="font-bold underline">here</span>
+          <div>
+            Refer to the cancellation policy{" "}
+            <span className="font-bold underline">here</span>
+          </div>
         </FAQ>
       </FAQSection>
       <br />
     </>
   );
-}
+};
 
 export default FAQs;

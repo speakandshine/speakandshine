@@ -1,19 +1,19 @@
-import * as React from "react";
 import { ASPECT_RATIO_LOGO } from "src/shared/helpers/aspectRatios";
 import { scrollToSection } from "src/shared/helpers/scroll";
-import Button from "../Button";
-import FilledImage from "../FilledImage";
+import Button from "../../Button";
+import FilledImage from "../../FilledImage";
 import styles from "./Navbar.module.css";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { GrClose } from "react-icons/gr";
+import { v4 as uuidv4 } from "uuid";
 
-export interface IButtonProps {
+export interface INavbarProps {
   MenuItems: any[];
   mobileDrawerOpen: boolean;
   toggleMobileDrawerOpen: any;
 }
-import { GiHamburgerMenu } from "react-icons/gi";
-import { GrClose } from "react-icons/gr";
 
-const Navbar = React.forwardRef((props: IButtonProps, ref) => {
+const Navbar = (props: INavbarProps) => {
   const { MenuItems, mobileDrawerOpen, toggleMobileDrawerOpen } = props;
 
   return (
@@ -26,7 +26,7 @@ const Navbar = React.forwardRef((props: IButtonProps, ref) => {
           onClick={() => scrollToSection()}
         >
           <FilledImage
-            src="/assets/shared/Layout/Logo.png"
+            src="/assets/shared/Logo.png"
             alt="Speech Shine Logo"
             aspectRatio={ASPECT_RATIO_LOGO}
             height={90}
@@ -53,7 +53,7 @@ const Navbar = React.forwardRef((props: IButtonProps, ref) => {
           onClick={() => scrollToSection()}
         >
           <FilledImage
-            src="/assets/shared/Layout/Logo.png"
+            src="/assets/shared/Logo.png"
             alt="Speech Shine Logo"
             aspectRatio={ASPECT_RATIO_LOGO}
             height={90}
@@ -63,8 +63,6 @@ const Navbar = React.forwardRef((props: IButtonProps, ref) => {
       </div>
     </header>
   );
-});
-
-Navbar.displayName = "Navbar";
+};
 
 export default Navbar;

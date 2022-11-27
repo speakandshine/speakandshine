@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export interface ITextfieldProps {
   placeholder: string;
   value: string;
@@ -9,7 +7,7 @@ export interface ITextfieldProps {
   error?: boolean;
 }
 
-const Textfield = React.forwardRef((props: ITextfieldProps, ref) => {
+const Textfield = (props: ITextfieldProps) => {
   const { placeholder, value, onChange, disabled, error, onBlur } = props;
   return (
     <>
@@ -25,8 +23,6 @@ const Textfield = React.forwardRef((props: ITextfieldProps, ref) => {
       {error && <div className="text-red"> *Please enter a valid email</div>}
     </>
   );
-});
-
-Textfield.displayName = "Service";
+};
 
 export default Textfield;

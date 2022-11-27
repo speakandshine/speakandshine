@@ -15,7 +15,7 @@ export interface IFeesAndFundingProps {
   bookSessionRef: any;
 }
 
-function FeesAndFunding(props: IFeesAndFundingProps) {
+const FeesAndFunding = (props: IFeesAndFundingProps) => {
   return (
     <>
       <div className="flex flex-col laptop:grid laptop:grid-cols-4 laptop:gap-9 space-y-[15px] laptop:space-y-0 p-[20px]">
@@ -67,7 +67,7 @@ function FeesAndFunding(props: IFeesAndFundingProps) {
           title="Self-funded"
           icons={[<RiMoneyDollarCircleFill key={uuidv4()} />]}
         >
-          <div> Privately funded speech therapy and music therapy.</div>
+          <div> Privately funded speech therapy.</div>
         </FundingMethod>
       </div>
       <div className="bg-secondary-yellow p-[20px]">
@@ -81,10 +81,6 @@ function FeesAndFunding(props: IFeesAndFundingProps) {
             <li>
               Cancellations made with less than 48 hours notice will incur the
               full cost.
-            </li>
-            <li>
-              No cancellation policy is effective for Saturday appointments
-              falling during the school term.
             </li>
             <li>
               Our cancellation fees are also outlined in your Service Agreement.
@@ -108,6 +104,6 @@ function FeesAndFunding(props: IFeesAndFundingProps) {
       </div>
     </>
   );
-}
+};
 
 export default FeesAndFunding;

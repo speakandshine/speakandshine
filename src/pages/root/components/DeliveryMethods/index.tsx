@@ -11,7 +11,7 @@ export interface IDeliveryMethodsProps {
   bookSessionRef: any;
 }
 
-function DeliveryMethods(props: IDeliveryMethodsProps) {
+const DeliveryMethods = (props: IDeliveryMethodsProps) => {
   const BookSessionButton = (
     <Button
       variant="booking"
@@ -123,6 +123,6 @@ function DeliveryMethods(props: IDeliveryMethodsProps) {
       </div>
     </>
   );
-}
+};
 
 export default DeliveryMethods;

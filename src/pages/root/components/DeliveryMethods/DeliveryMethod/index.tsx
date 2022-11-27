@@ -1,26 +1,25 @@
-import * as React from "react";
+import { ReactNode } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export interface IDeliveryMethodProps {
   title: string;
   subtitle: string;
-  children: React.ReactNode;
+  children: ReactNode;
   icons?: any[];
   button: any;
 }
 
-const DeliveryMethod = React.forwardRef((props: IDeliveryMethodProps, ref) => {
+const DeliveryMethod = (props: IDeliveryMethodProps) => {
   const { title, subtitle, children, icons, button } = props;
   return (
     <div className="grid grid-rows-5 border-divider border-solid laptop:border-r-[5px] laptop:border-b-0 border-b-[5px] p-[10px] rounded-[20px]">
       <div className="row-span-1 flex flex-col items-center justify-center">
         <div className="flex space-x-10">
-          {icons?.map((icon, index) => {
+          {icons?.map((icon) => {
             return (
-              <i key={uuidv4()} className="text-icon text-[#add8e6]">
-                {" "}
-                {icon}{" "}
-              </i>
+              <div key={uuidv4()} className="text-icon text-[#add8e6]">
+                {icon}
+              </div>
             );
           })}
         </div>
@@ -33,8 +32,6 @@ const DeliveryMethod = React.forwardRef((props: IDeliveryMethodProps, ref) => {
       </div>
     </div>
   );
-});
-
-DeliveryMethod.displayName = "DeliveryMethod";
+};
 
 export default DeliveryMethod;

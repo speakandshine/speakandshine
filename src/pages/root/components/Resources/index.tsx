@@ -1,9 +1,9 @@
 import ResourceSection from "./ResourceSection";
 import Resource from "./Resource";
 
-export interface IFeesAndFundingProps {}
+export interface IResourcesProps {}
 
-function Resources(props: IFeesAndFundingProps) {
+const Resources = (props: IResourcesProps) => {
   return (
     <>
       <div className="flex flex-col laptop:grid laptop:grid-cols-2 space-y-[15px] laptop:space-y-0">
@@ -152,6 +152,6 @@ function Resources(props: IFeesAndFundingProps) {
       </div>
     </>
   );
-}
+};
 
 export default Resources;

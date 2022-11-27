@@ -1,37 +1,35 @@
-import * as React from "react";
+import { ReactNode, useState } from "react";
 import { AiFillCaretDown, AiFillCaretRight } from "react-icons/ai";
 import FadeIn from "src/shared/components/FadeIn";
 
-export interface IResourceSectionProps {
+export interface IFAQProps {
   question: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
-const FAQ = React.forwardRef((props: IResourceSectionProps, ref) => {
+const FAQ = (props: IFAQProps) => {
   const { question, children } = props;
 
-  const [showAnswer, toggleShowAnswer] = React.useState(false);
+  const [showAnswer, toggleShowAnswer] = useState(false);
   return (
     <>
       <div
         className="grid grid-cols-12 shadow-border p-[15px] my-[10px] bg-secondary-yellow cursor-pointer"
         onClick={() => toggleShowAnswer(!showAnswer)}
       >
-        <h4 className="col-span-12 flex items-center space-x-2">
-          {showAnswer && <AiFillCaretRight />}
-          {!showAnswer && <AiFillCaretDown />}
+        <div className="col-span-12 flex items-center space-x-2">
+          {showAnswer && <AiFillCaretRight className="text-[16px]" />}
+          {!showAnswer && <AiFillCaretDown className="text-[16px]" />}
           <h4> {question} </h4>
-        </h4>
+        </div>
       </div>
       {showAnswer && (
         <FadeIn title="">
-          <div className="p-[15px]">{children}</div>{" "}
+          <div className="p-[15px]">{children}</div>
         </FadeIn>
       )}
     </>
   );
-});
-
-FAQ.displayName = "FAQ";
+};
 
 export default FAQ;

@@ -1,8 +1,8 @@
-import * as React from "react";
+import { ReactNode } from "react";
 import { BsCalendarCheck } from "react-icons/bs";
 export interface IButtonProps {
   variant: "standard" | "action" | "booking";
-  children?: React.ReactNode;
+  children?: ReactNode;
   ref?: any;
   onClick: any;
   floating?: boolean;
@@ -11,7 +11,7 @@ export interface IButtonProps {
   icon?: any;
 }
 
-const Button = React.forwardRef((props: IButtonProps, ref) => {
+const Button = (props: IButtonProps) => {
   const { onClick, children, variant, floating, selected, disabled, icon } =
     props;
 
@@ -63,8 +63,6 @@ const Button = React.forwardRef((props: IButtonProps, ref) => {
       </div>
     </button>
   );
-});
-
-Button.displayName = "FadeIn";
+};
 
 export default Button;

@@ -1,27 +1,26 @@
-import * as React from "react";
-import styles from "./About.module.css";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 export interface IAboutUsProps {}
 
-function AboutUs(props: IAboutUsProps) {
+const AboutUs = (props: IAboutUsProps) => {
   return (
     <>
       <h1 className="text-center">Mission statement</h1>
       <br />
       <div className="bg-secondary-yellow">
         <div className="p-[20px]">
-          <i className="text-secondary-blue text-quote-icon-mobile laptop:text-quote-icon">
+          <div className="text-secondary-blue text-quote-icon-mobile laptop:text-quote-icon">
             <FaQuoteLeft />
-          </i>
+          </div>
           <h1 className="text-[18px] laptop:text-[24px] text-center">
             At Speak & Shine we aim to deliver speech therapy that educates and
             empowers individuals with the communication skills to perform and
             function in society.
           </h1>
-          <i className="flex justify-end text-secondary-blue text-quote-icon-mobile laptop:text-quote-icon">
+          <div className="flex justify-end text-secondary-blue text-quote-icon-mobile laptop:text-quote-icon">
             <FaQuoteRight />
-          </i>
+          </div>
+
           <div className="flex justify-center items-center space-x-3">
             <div className="h-[1px] w-[40px] bg-primary-grey" />
             <h1> Founder </h1>
@@ -35,10 +34,10 @@ function AboutUs(props: IAboutUsProps) {
         <h1>Who we are</h1>
         <div>
           Speak & Shine is a Mobile Speech Pathology that diagnoses and treats
-          communication difficulties in children aged 1 - 12 years. We assess
-          and treat difficulties with speaking, listening, understanding,
-          literacy and social skills. We are mobile to make speech therapy
-          convenient and easy for parents and children.
+          communication difficulties in children 1 - 18 years. We assess and
+          treat difficulties with speaking, listening, understanding, literacy
+          and social skills. We are mobile, to make speech therapy convenient
+          and easy for parents and children.
         </div>
         <br />
         <h1>How / Why we started</h1>
@@ -54,6 +53,6 @@ function AboutUs(props: IAboutUsProps) {
       </div>
     </>
   );
-}
+};
 
 export default AboutUs;

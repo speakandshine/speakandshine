@@ -16,7 +16,7 @@ export interface IFilledImageProps {
   aspectRatio: number;
 }
 
-function FilledImage(props: IFilledImageProps) {
+const FilledImage = (props: IFilledImageProps) => {
   return (
     <div
       className={`relative ${props.containerClass ? props.containerClass : ""}`}
@@ -50,6 +50,6 @@ function FilledImage(props: IFilledImageProps) {
       />
     </div>
   );
-}
+};
 
 export default FilledImage;

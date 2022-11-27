@@ -1,14 +1,13 @@
-import * as React from "react";
-import { v4 as uuidv4 } from "uuid";
+import { ReactNode } from "react";
 
-export interface IResourceSectionProps {
+export interface IFAQSectionProps {
   title: string;
   children: React.ReactNode;
   icons?: any[];
   customClass?: string;
 }
 
-const FAQSection = React.forwardRef((props: IResourceSectionProps, ref) => {
+const FAQSection = (props: IFAQSectionProps) => {
   const { title, children, customClass } = props;
   return (
     <div
@@ -19,8 +18,6 @@ const FAQSection = React.forwardRef((props: IResourceSectionProps, ref) => {
       <div className="">{children}</div>
     </div>
   );
-});
-
-FAQSection.displayName = "FAQSection";
+};
 
 export default FAQSection;

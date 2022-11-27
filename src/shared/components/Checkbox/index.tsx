@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export interface ICheckboxProps {
   value: string;
   checked: boolean;
@@ -7,7 +5,7 @@ export interface ICheckboxProps {
   disabled?: boolean;
 }
 
-const Checkbox = React.forwardRef((props: ICheckboxProps, ref) => {
+const Checkbox = (props: ICheckboxProps) => {
   const { value, checked, onChange, disabled } = props;
   return (
     <div>
@@ -22,8 +20,5 @@ const Checkbox = React.forwardRef((props: ICheckboxProps, ref) => {
       <label> {value} </label>
     </div>
   );
-});
-
-Checkbox.displayName = "Section";
-
+};
 export default Checkbox;

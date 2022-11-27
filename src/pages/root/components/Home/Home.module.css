@@ -1,11 +1,20 @@
 .backdrop {
   height: calc(100vh - 90px);
   background-image: url("/assets/sections/home/banner.jpg");
-  background-position: -200px -90px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@media (max-width: 1074px) {
+@media (max-width: 1072px) {
   .backdrop {
-    background-position: -300px -90px;
+    background-position: -100px 0px;
+  }
+}
+
+@media (max-width: 800px) {
+  .backdrop {
+    background-size: cover;
+    background-position: -150px 0px;
+    background-repeat: no-repeat;
   }
 }
