@@ -77,7 +77,7 @@ const Root: NextPage = () => {
 
   return (
     <Layout sections={sections}>
-      <Home ref={homeRef} servicesRef={s2Ref} bookSessionRef={s6Ref} />
+      <Home ref={homeRef} servicesRef={s2Ref} bookSessionRef={s7Ref} />
       {/* CONTENT SECTIONS */}
       <div>
         <Section title={sections[1].title} ref={s1Ref}>
