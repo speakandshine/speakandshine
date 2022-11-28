@@ -22,6 +22,7 @@ module.exports = {
         "big-heading-mobile": "30px",
         "quote-icon": "60px",
         "quote-icon-mobile": "30px",
+        "book-session-submitted-logo": "50px",
         icon: "50px",
       },
     },

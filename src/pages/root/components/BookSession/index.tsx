@@ -10,6 +10,7 @@ import { RiErrorWarningFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import FilledImage from "src/shared/components/FilledImage";
 import { ASPECT_RATIOS_BOOK_SESSION_MAP } from "src/shared/helpers/aspectRatios";
+import { emailRegex } from "src/shared/helpers/formValidation";
 
 export interface IBookSessionProps {}
 
@@ -77,6 +78,7 @@ const BookSession = (props: IBookSessionProps) => {
         lastName &&
         suburb &&
         email &&
+        email.match(emailRegex) !== null &&
         phoneNumber &&
         clientAge &&
         clientName &&
@@ -105,6 +107,10 @@ const BookSession = (props: IBookSessionProps) => {
           <div>
             <div className="bg-secondary-yellow rounded-[20px] p-[20px]">
               <h2> Fill in the form below to start the process! </h2>
+              <label className="text-[9px]">
+                Note: Some symbols / characters have been disabled for security
+                purposes.
+              </label>
               <div className="grid grid-cols-6 gap-[10px] p-[10px]">
                 <div className="col-span-3">
                   <Textfield
@@ -112,6 +118,7 @@ const BookSession = (props: IBookSessionProps) => {
                     placeholder="First name"
                     onChange={(e: any) => setFirstName(e.target.value)}
                     disabled={isInputDisabled()}
+                    maxLength={35}
                   />
                 </div>
 
@@ -121,6 +128,7 @@ const BookSession = (props: IBookSessionProps) => {
                     placeholder="Last name"
                     onChange={(e: any) => setLastName(e.target.value)}
                     disabled={isInputDisabled()}
+                    maxLength={35}
                   />
                 </div>
                 <div className="col-span-6 laptop:col-span-3">
@@ -129,13 +137,20 @@ const BookSession = (props: IBookSessionProps) => {
                     placeholder="Email address"
                     onChange={(e: any) => setEmail(e.target.value)}
                     disabled={isInputDisabled()}
+                    error={
+                      email.match(emailRegex) === null && email !== ""
+                        ? "Please enter a valid email address"
+                        : ""
+                    }
                   />
                 </div>
                 <div className="col-span-3">
                   <Textfield
                     value={phoneNumber}
                     placeholder="Phone number"
-                    onChange={(e: any) => setPhoneNumber(e.target.value)}
+                    onChange={(e: any) =>
+                      setPhoneNumber(e.target.value.replace(/[^+\d\(\)]/gi, ""))
+                    }
                     disabled={isInputDisabled()}
                   />
                 </div>
@@ -145,6 +160,7 @@ const BookSession = (props: IBookSessionProps) => {
                     placeholder="Suburb"
                     onChange={(e: any) => setSuburb(e.target.value)}
                     disabled={isInputDisabled()}
+                    maxLength={35}
                   />
                 </div>
                 <div className="col-span-3"></div>
@@ -154,13 +170,17 @@ const BookSession = (props: IBookSessionProps) => {
                     placeholder="Name of person wanting services"
                     onChange={(e: any) => setClientName(e.target.value)}
                     disabled={isInputDisabled()}
+                    maxLength={35}
                   />
                 </div>
                 <div className="col-span-6 laptop:col-span-3">
                   <Textfield
                     value={clientAge}
                     placeholder="Age of person wanting services"
-                    onChange={(e: any) => setClientAge(e.target.value)}
+                    onChange={(e: any) =>
+                      setClientAge(e.target.value.replace(/[^\d]/gi, ""))
+                    }
+                    maxLength={3}
                     disabled={isInputDisabled()}
                   />
                 </div>
@@ -215,7 +235,9 @@ const BookSession = (props: IBookSessionProps) => {
                     className="bg-white p-[10px] rounded-[5px] w-full focus:outline-primary-yellow"
                     placeholder="How can we help?"
                     value={enquiry}
-                    onChange={(e) => setEnquiry(e.target.value)}
+                    onChange={(e) =>
+                      setEnquiry(e.target.value.replace(/[\[\]\{\}\<\>]/, ""))
+                    }
                     disabled={isInputDisabled()}
                   />
                 </div>
@@ -252,18 +274,18 @@ const BookSession = (props: IBookSessionProps) => {
         )}
         {formSubmitted && (
           <div className="bg-secondary-yellow flex flex-col justify-center items-center space-y-5 p-[30px] rounded-[20px] h-full">
-            <i className="text-[green] text-book-session-submitted-logo">
+            <div className="text-[green] text-book-session-submitted-logo">
               <BsFillCheckCircleFill />
-            </i>
+            </div>
             <h2>Thank you for getting in contact with us!</h2>
             <h2> You will receive an email in the next couple of days.</h2>
           </div>
         )}
         {formError && (
           <div className="bg-secondary-yellow flex flex-col justify-center items-center space-y-5 p-[30px] rounded-[20px] h-full">
-            <i className="text-[#ff4040] text-book-session-submitted-logo">
+            <div className="text-[#ff4040] text-book-session-submitted-logo">
               <RiErrorWarningFill />
-            </i>
+            </div>
             <h2>There was an error with submitting the form. </h2>
             <h2>Please refresh to try again!</h2>
           </div>
