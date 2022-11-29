@@ -306,18 +306,20 @@ const BookSession = (props: IBookSessionProps) => {
             <h2>Please refresh to try again!</h2>
           </div>
         )}
-        {(featureEmailServiceDisabled() || !showEnquiryForm()) && (
-          <div className="flex flex-col p-[20px] h-full">
-            <div className="px-[20px]">
-              <h2> Speak & Shine Speech Pathology - Enquiry Form</h2>
-              <br />
-              <div className="bg-secondary-yellow rounded-[20px] p-[20px]">
-                Apologies, the enquiry form is currently unavailable due to
-                website maintenance. It will be available shortly.
+        {!formSubmitted &&
+          !formError &&
+          (featureEmailServiceDisabled() || featureEnquiryFormDisabled()) && (
+            <div className="flex flex-col p-[20px] h-full">
+              <div className="px-[20px]">
+                <h2> Speak & Shine Speech Pathology - Enquiry Form</h2>
+                <br />
+                <div className="bg-secondary-yellow rounded-[20px] p-[20px]">
+                  Apologies, the enquiry form is currently unavailable due to
+                  website maintenance. It will be available shortly.
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
         <div className="flex flex-col p-[20px] h-full">
           <div className="px-[20px]">
             <h2> Contact Us </h2>

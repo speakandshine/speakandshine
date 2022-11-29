@@ -17,7 +17,7 @@ const Checkbox = (props: ICheckboxProps) => {
         value={value}
         disabled={disabled}
       />
-      <label> {value} </label>
+      <label> {value}</label>
     </div>
   );
 };
