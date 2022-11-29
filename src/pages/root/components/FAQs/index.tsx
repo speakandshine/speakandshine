@@ -3,7 +3,7 @@ import FAQSection from "./FAQSection";
 import FAQ from "./FAQ";
 import Resource from "../Resources/Resource";
 import { scrollToSection } from "src/shared/helpers/scroll";
-
+import * as fbq from "src/shared/helpers/facebookPixel";
 export interface IFAQsProps {
   bookSessionRef: any;
   feesAndFundingRef: any;
@@ -18,6 +18,7 @@ const FAQs = (props: IFAQsProps) => {
         className="underline font-bold cursor-pointer"
         onClick={() => {
           scrollToSection(bookSessionRef);
+          fbq.event("View Enquiry Section", {});
         }}
       >
         {text}

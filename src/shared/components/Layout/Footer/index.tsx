@@ -4,6 +4,7 @@ import { scrollToSection } from "src/shared/helpers/scroll";
 import { v4 as uuidv4 } from "uuid";
 import { AiFillInstagram } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
+import * as fbq from "src/shared/helpers/facebookPixel";
 
 export interface IFooterProps {
   sections: any[];
@@ -13,16 +14,19 @@ const Footer = (props: IFooterProps) => {
   const { sections } = props;
   const Links = sections.map((s) => {
     return (
-      <a
-        target=""
+      <div
         className="flex items-center justify-center text-center border-white border-[1px] border-solid laptop:p-[10px] rounded-[5px] cursor-pointer text-[12px] laptop:text-inherit"
         onClick={() => {
+          console.log(s.title);
+          if (s.title === "Enquire Now") {
+            fbq.event("View Enquiry Section", {});
+          }
           scrollToSection(s.ref);
         }}
         key={uuidv4()}
       >
         {s.title}
-      </a>
+      </div>
     );
   });
 

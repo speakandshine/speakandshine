@@ -11,6 +11,7 @@ import { MdEmail } from "react-icons/md";
 import FilledImage from "src/shared/components/FilledImage";
 import { ASPECT_RATIOS_BOOK_SESSION_MAP } from "src/shared/helpers/aspectRatios";
 import { emailRegex } from "src/shared/helpers/formValidation";
+import * as fbq from "src/shared/helpers/facebookPixel";
 
 export interface IBookSessionProps {}
 
@@ -59,6 +60,7 @@ const BookSession = (props: IBookSessionProps) => {
       .then((data) => {
         setFormSubmitting(false);
         setFormSubmitted(true);
+        fbq.event("Submitted Enquiry", {});
       })
       .catch((error) => {
         console.log(error);
@@ -106,8 +108,10 @@ const BookSession = (props: IBookSessionProps) => {
         {!formSubmitted && !formError && (
           <div>
             <div className="bg-secondary-yellow rounded-[20px] p-[20px]">
-              <h2> Fill in the form below to start the process! </h2>
-              <label className="text-[9px]">
+              <h2 className="text-center">
+                Speak & Shine Speech Pathology - Enquiry Form
+              </h2>
+              <label className="text-[9px] flex text-center justify-center items-center">
                 Note: Some symbols / characters have been disabled for security
                 purposes.
               </label>

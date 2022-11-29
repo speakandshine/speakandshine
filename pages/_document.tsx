@@ -1,5 +1,6 @@
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import { FB_PIXEL_ID } from "src/shared/helpers/facebookPixel";
 
 export default class MyDocument extends Document {
   render() {
@@ -16,6 +17,14 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap"
           />
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+            />
+          </noscript>
         </Head>
         <body>
           <Main />

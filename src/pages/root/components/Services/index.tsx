@@ -3,6 +3,7 @@ import { scrollToSection } from "src/shared/helpers/scroll";
 import Service from "src/pages/root/components/Services/Service";
 import FilledImage from "src/shared/components/FilledImage";
 import { ASPECT_RATIO_SERVICES_SPEECH_THERAPY } from "src/shared/helpers/aspectRatios";
+import * as fbq from "src/shared/helpers/facebookPixel";
 
 export interface IServicesProps {
   bookSessionRef: any;
@@ -81,9 +82,10 @@ const Services = (props: IServicesProps) => {
               variant="booking"
               onClick={() => {
                 scrollToSection(props.bookSessionRef);
+                fbq.event("View Enquiry Section", {});
               }}
             >
-              Book a Session
+              Enquire Now
             </Button>
           </div>
         </div>
@@ -148,9 +150,10 @@ const Services = (props: IServicesProps) => {
           variant="booking"
           onClick={() => {
             scrollToSection(props.bookSessionRef);
+            fbq.event("View Enquiry Section", {});
           }}
         >
-          Book a Session
+          Enquire Now
         </Button>
       </div>
     </>

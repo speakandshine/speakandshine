@@ -1,10 +1,11 @@
-import { useState, forwardRef } from "react";
+import { useState, forwardRef, useEffect } from "react";
 import styles from "./Home.module.css";
 
 import { AiFillCaretDown } from "react-icons/ai";
 import Button from "src/shared/components/Button";
 import { scrollToSection } from "src/shared/helpers/scroll";
 import { AiFillCloseCircle } from "react-icons/ai";
+import * as fbq from "src/shared/helpers/facebookPixel";
 
 export interface IHomeProps {
   bookSessionRef: any;
@@ -22,7 +23,7 @@ const Home = forwardRef((props: IHomeProps, ref) => {
             <div className="grid grid-cols-12 w-full">
               <div className="col-span-1"> </div>
               <h1 className="col-span-10 text-[16px] laptop:text-[24px]">
-                Book a session now to secure appointments for 2023!
+                Enquire now to secure appointments for 2023!
               </h1>
               <div className="col-span-1 flex justify-center items-center ">
                 <div
@@ -56,9 +57,12 @@ const Home = forwardRef((props: IHomeProps, ref) => {
           </Button>
           <Button
             variant="booking"
-            onClick={() => scrollToSection(props.bookSessionRef)}
+            onClick={() => {
+              scrollToSection(props.bookSessionRef);
+              fbq.event("View Enquiry Section", {});
+            }}
           >
-            Book a Session
+            Enquire Now
           </Button>
         </div>
       </div>

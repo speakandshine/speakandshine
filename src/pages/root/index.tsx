@@ -69,7 +69,7 @@ const Root: NextPage = () => {
       inView: s6InView,
     },
     {
-      title: "Book a Session",
+      title: "Enquire Now",
       ref: s7Ref,
       inView: s7InView,
     },
