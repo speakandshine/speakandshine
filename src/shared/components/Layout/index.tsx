@@ -6,6 +6,7 @@ import Button from "src/shared/components/Button";
 import { v4 as uuidv4 } from "uuid";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import * as fbq from "src/shared/helpers/facebookPixel";
 
 export interface ILayoutProps {
   children?: React.ReactNode;
@@ -17,12 +18,13 @@ const Layout = (props: ILayoutProps) => {
   const [mobileDrawerOpen, toggleMobileDrawerOpen] = React.useState(false);
 
   const MenuItems = sections.map((section) => {
-    return section.title === "Book a Session" ? (
+    return section.title === "Enquire Now" ? (
       <div className="flex flex-col items-center" key={uuidv4()}>
         <Button
           onClick={() => {
             scrollToSection(section.ref);
             toggleMobileDrawerOpen(false);
+            fbq.event("View Enquiry Section", {});
           }}
           variant="booking"
           selected={section.inView}

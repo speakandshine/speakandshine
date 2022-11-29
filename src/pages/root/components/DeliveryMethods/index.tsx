@@ -6,6 +6,7 @@ import { FaLaptopHouse } from "react-icons/fa";
 import { IoIosSchool } from "react-icons/io";
 import { RiContactsFill } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
+import * as fbq from "src/shared/helpers/facebookPixel";
 
 export interface IDeliveryMethodsProps {
   bookSessionRef: any;
@@ -17,9 +18,10 @@ const DeliveryMethods = (props: IDeliveryMethodsProps) => {
       variant="booking"
       onClick={() => {
         scrollToSection(props.bookSessionRef);
+        fbq.event("View Enquiry Section", {});
       }}
     >
-      Book a Session
+      Enquire Now
     </Button>
   );
 

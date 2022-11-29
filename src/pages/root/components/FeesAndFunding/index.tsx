@@ -10,6 +10,7 @@ import { RiMoneyDollarCircleFill } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
 import Button from "src/shared/components/Button";
 import { scrollToSection } from "src/shared/helpers/scroll";
+import * as fbq from "src/shared/helpers/facebookPixel";
 
 export interface IFeesAndFundingProps {
   bookSessionRef: any;
@@ -97,9 +98,10 @@ const FeesAndFunding = (props: IFeesAndFundingProps) => {
           variant="booking"
           onClick={() => {
             scrollToSection(props.bookSessionRef);
+            fbq.event("View Enquiry Section", {});
           }}
         >
-          Book a session
+          Enquire Now
         </Button>
       </div>
     </>
