@@ -12,6 +12,11 @@ import FilledImage from "src/shared/components/FilledImage";
 import { ASPECT_RATIOS_BOOK_SESSION_MAP } from "src/shared/helpers/aspectRatios";
 import { emailRegex } from "src/shared/helpers/formValidation";
 import * as fbq from "src/shared/helpers/facebookPixel";
+import { AiFillInstagram } from "react-icons/ai";
+import {
+  featureEmailServiceDisabled,
+  featureEnquiryFormDisabled,
+} from "src/shared/helpers/featureFlags";
 
 export interface IBookSessionProps {}
 
@@ -94,6 +99,13 @@ const BookSession = (props: IBookSessionProps) => {
     );
   };
 
+  const showEnquiryForm = () => {
+    if (featureEnquiryFormDisabled()) return false;
+    if (formSubmitted) return false;
+    if (formError) return false;
+    return true;
+  };
+
   const removeOrAddDeliveryMethod = (method: string) => {
     if (deliveryMethods.includes(method)) {
       setDeliveryMethods(deliveryMethods.filter((dm) => dm !== method));
@@ -105,7 +117,7 @@ const BookSession = (props: IBookSessionProps) => {
   return (
     <>
       <div className="flex flex-col justify-center laptop:grid laptop:grid-cols-2 w-full">
-        {!formSubmitted && !formError && (
+        {showEnquiryForm() && (
           <div>
             <div className="bg-secondary-yellow rounded-[20px] p-[20px]">
               <h2 className="text-center">
@@ -294,16 +306,41 @@ const BookSession = (props: IBookSessionProps) => {
             <h2>Please refresh to try again!</h2>
           </div>
         )}
+        {(featureEmailServiceDisabled() || !showEnquiryForm()) && (
+          <div className="flex flex-col p-[20px] h-full">
+            <div className="px-[20px]">
+              <h2> Speak & Shine Speech Pathology - Enquiry Form</h2>
+              <br />
+              <div className="bg-secondary-yellow rounded-[20px] p-[20px]">
+                Apologies, the enquiry form is currently unavailable due to
+                website maintenance. It will be available shortly.
+              </div>
+            </div>
+          </div>
+        )}
         <div className="flex flex-col p-[20px] h-full">
           <div className="px-[20px]">
             <h2> Contact Us </h2>
-            <div className="flex flex-col space-y-6">
-              <div className="flex  items-center space-x-4 p-[10px]">
-                <MdEmail className="text-primary-yellow text-[16px] laptop:text-[24px]" />
-                <div className="break-all text-[16px] laptop:text-[24px]">
-                  admin@speakandshinespeechpathology.com.au
+            <div className="flex flex-col space-y-1">
+              {!featureEmailServiceDisabled() && (
+                <div className="flex items-center space-x-4 p-[10px]">
+                  <MdEmail className="text-primary-grey text-[16px] laptop:text-[24px]" />
+                  <div className="break-all text-[16px] laptop:text-[24px]">
+                    admin@speakandshinespeechpathology.com.au
+                  </div>
                 </div>
-              </div>
+              )}
+              <a
+                className="flex items-center space-x-4 p-[10px] cursor-pointer"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={"https://instagram.com/speakandshinespeechpathology"}
+              >
+                <AiFillInstagram className="text-primary-grey text-[16px] laptop:text-[24px]" />
+                <div className="break-all text-[16px] laptop:text-[24px]">
+                  @speakandshinespeechpathology
+                </div>
+              </a>
             </div>
           </div>
           <br />
