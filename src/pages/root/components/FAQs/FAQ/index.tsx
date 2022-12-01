@@ -20,7 +20,7 @@ const FAQ = (props: IFAQProps) => {
         <div className="col-span-12 flex items-center space-x-2">
           {showAnswer && <AiFillCaretRight className="text-[16px]" />}
           {!showAnswer && <AiFillCaretDown className="text-[16px]" />}
-          <h4> {question} </h4>
+          <h3> {question} </h3>
         </div>
       </div>
       {showAnswer && (

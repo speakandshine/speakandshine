@@ -9,11 +9,20 @@ export interface IButtonProps {
   selected?: boolean;
   disabled?: boolean;
   icon?: any;
+  ariaLabel?: string;
 }
 
 const Button = (props: IButtonProps) => {
-  const { onClick, children, variant, floating, selected, disabled, icon } =
-    props;
+  const {
+    onClick,
+    children,
+    variant,
+    floating,
+    selected,
+    disabled,
+    icon,
+    ariaLabel,
+  } = props;
 
   const getVariantStyle = () => {
     switch (variant) {
@@ -43,6 +52,7 @@ const Button = (props: IButtonProps) => {
       onClick={onClick}
       className={`p-[15px] rounded-[10px] h-full ${getVariantStyle()} ${getFloatingStyle()} ${getDisabledStyle()}`}
       disabled={disabled}
+      aria-label={ariaLabel}
     >
       <div className="flex flex-col items-center justify-center">
         <div className="flex items-center justify-center">
@@ -55,7 +65,13 @@ const Button = (props: IButtonProps) => {
             </i>
           )}
 
-          <h4 className={`${variant === "booking" ? "" : ""}`}>{children}</h4>
+          <div
+            className={`${
+              variant === "booking" ? "" : ""
+            } font-heading font-bold`}
+          >
+            {children}
+          </div>
         </div>
         {selected && variant !== "booking" && (
           <div className="h-[5px] w-full bg-primary-yellow rounded-[10px]" />

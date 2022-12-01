@@ -29,9 +29,9 @@ const Service = (props: IServiceProps) => {
             <AiFillCaretRight />
           </div>
         )}
-        <h4 className="cursor-pointer" onClick={toggleDropdown}>
+        <h3 className="cursor-pointer" onClick={toggleDropdown}>
           {props.title}
-        </h4>
+        </h3>
       </div>
       {open && (
         <FadeIn title="">

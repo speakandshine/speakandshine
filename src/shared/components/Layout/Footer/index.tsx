@@ -2,7 +2,7 @@ import FilledImage from "../../FilledImage";
 import { ASPECT_RATIO_LOGO } from "src/shared/helpers/aspectRatios";
 import { scrollToSection } from "src/shared/helpers/scroll";
 import { v4 as uuidv4 } from "uuid";
-import { AiFillInstagram } from "react-icons/ai";
+import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import * as fbq from "src/shared/helpers/facebookPixel";
 import { featureEmailServiceDisabled } from "src/shared/helpers/featureFlags";
@@ -35,7 +35,7 @@ const Footer = (props: IFooterProps) => {
       <div className="flex flex-col items-center justify-center">
         <FilledImage
           src="assets/shared/Logo2.png"
-          alt=""
+          alt="Speak & Shine Speech Pathology Logo"
           aspectRatio={ASPECT_RATIO_LOGO}
           height={90}
         />
@@ -49,7 +49,7 @@ const Footer = (props: IFooterProps) => {
       <div className="grid grid-rows-2 grid-cols-3 grid-flow-col gap-3">
         {Links}
       </div>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center space-y-2">
         <a
           className="flex justify-center items-center space-x-2 cursor-pointer"
           target="_blank"
@@ -58,6 +58,15 @@ const Footer = (props: IFooterProps) => {
         >
           <AiFillInstagram className="text-[24px]" />
           <h3> Instagram</h3>
+        </a>
+        <a
+          className="flex justify-center items-center space-x-2 cursor-pointer"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://facebook.com/speakandshinespeechpathology"
+        >
+          <AiFillFacebook className="text-[24px]" />
+          <h3> Facebook</h3>
         </a>
       </div>
     </footer>

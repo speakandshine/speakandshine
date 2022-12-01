@@ -12,39 +12,39 @@ const Resources = (props: IResourcesProps) => {
             title="Communication Milestone factsheet"
             description="Stages of speech development from 0 - 5yrs."
             type="pdf"
-            resource="language1"
+            resource="language/1_Communication_Milestones_factsheet"
           />
           <Resource
             title="Speech pathology in mental health services"
             description="How speech pathology may help some mental health issues."
             type="pdf"
-            resource="language2"
+            resource="language/2_Speech_pathology_in_mental_health_services"
           />
           <Resource
             title="Raising Bilingual children"
             description="Most children are able to learn two (or more) languages at the
                 same time without difficulty."
             type="pdf"
-            resource="language3"
+            resource="language/3_Raising_Bilingual_children"
           />
           <Resource
             title=" Helping your Baby to talk"
             description="Every baby learns to speak by listening, playing with sounds and
                 talking to others."
             type="pdf"
-            resource="language4"
+            resource="language/4_Helping_your_Baby_to_talk"
           />
           <Resource
             title="Helping your Baby to talk"
             description="Parent information/ parent guide."
             type="pdf"
-            resource="language5"
+            resource="language/5_Helping_your_Baby_to_talk_Parent_Guide"
           />
           <Resource
             title="Autism"
             description="A condition that affects the way a person makes sense of, and interacts with, other people and their environment."
             type="pdf"
-            resource="language6"
+            resource="language/6_Autism_Spectrum_Disorder"
           />
         </ResourceSection>
         <ResourceSection title="Speech" customClass="bg-secondary-yellow">
@@ -52,19 +52,19 @@ const Resources = (props: IResourcesProps) => {
             title="The sound of speech"
             description="Stages of speech from 1 - 3 years old."
             type="pdf"
-            resource="speech1"
+            resource="speech/1_The_Sound_Of_Speech_0_to_3_years"
           />
           <Resource
             title="Learning speech"
             description="Preschool and school aged children stages of speech."
             type="pdf"
-            resource="speech2"
+            resource="speech/2_Learning_speech"
           />
           <Resource
             title="Speech Pathology and Indigenous children"
             description="Understanding indigenous children in speech therapy."
             type="pdf"
-            resource="speech3"
+            resource="speech/3_Speech_Pathology_And_Indigenous_Children"
           />
           <Resource
             title="Tongue Tie"
@@ -72,7 +72,7 @@ const Resources = (props: IResourcesProps) => {
                 holds the tongue tightly to the floor of the mouth and reduces
                 the mobility, flexibility and reach of the tongue."
             type="pdf"
-            resource="speech4"
+            resource="speech/4_Tongue_Tie"
           />
         </ResourceSection>
         <ResourceSection
@@ -83,13 +83,13 @@ const Resources = (props: IResourcesProps) => {
             title="When should I get help for literacy difficulty?"
             description="Signs of literacy difficulty."
             type="pdf"
-            resource="literacy1"
+            resource="literacy/1_Literacy_Difficulty_Signs"
           />
           <Resource
             title="Learning to read and write"
             description="Reading and writing (literacy) are essential skills for children."
             type="pdf"
-            resource="literacy2"
+            resource="literacy/2_Literacy"
           />
         </ResourceSection>
         <ResourceSection
@@ -108,7 +108,7 @@ const Resources = (props: IResourcesProps) => {
             description=" Stuttering is a speech disorder that causes interruptions in the
                 rhythm or flow of speech."
             type="pdf"
-            resource="fluencystuttering2"
+            resource="fluencyStuttering/2_Stuttering"
           />
         </ResourceSection>
         <ResourceSection title="Feeding / Swallowing and Voice">
@@ -117,13 +117,13 @@ const Resources = (props: IResourcesProps) => {
             description="Babies and children who have trouble swallowing may not take in
                 enough nutrients to support growth and brain development."
             type="pdf"
-            resource="feedingswallowing2"
+            resource="feedingSwallowingVoice/1_Swallowing"
           />
           <Resource
             title="Voice information"
             description="The human voice provides the basic sound for speech and singing."
             type="pdf"
-            resource="voice2"
+            resource="feedingSwallowingVoice/2_Voice"
           />
         </ResourceSection>
         <ResourceSection

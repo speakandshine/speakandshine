@@ -44,7 +44,7 @@ const FilledImage = (props: IFilledImageProps) => {
         src={props.src}
         alt={props.alt}
         layout="fill"
-        priority
+        priority={false}
         objectFit="contain"
         style={props.imageStyle}
       />

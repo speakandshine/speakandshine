@@ -43,7 +43,7 @@ const FeesAndFunding = (props: IFeesAndFundingProps) => {
           icons={[
             <FilledImage
               src="/assets/sections/feesAndFunding/NDIS.png"
-              alt="Medicare Logo"
+              alt="NDIS (National Disability Insurance Scheme) Logo"
               aspectRatio={ASPECT_RATIO_FEES_AND_FUNDING_NDIS}
               height={50}
               key={uuidv4()}
