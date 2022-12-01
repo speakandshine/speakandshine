@@ -27,7 +27,7 @@ const Navbar = (props: INavbarProps) => {
         >
           <FilledImage
             src="/assets/shared/Logo.png"
-            alt="Speech Shine Logo"
+            alt="Speak & Shine Speech Pathology Logo"
             aspectRatio={ASPECT_RATIO_LOGO}
             height={90}
           />
@@ -38,6 +38,7 @@ const Navbar = (props: INavbarProps) => {
             <Button
               variant="standard"
               onClick={() => toggleMobileDrawerOpen(!mobileDrawerOpen)}
+              ariaLabel="Mobile Hamburger Menu"
             >
               {mobileDrawerOpen && <GrClose />}
               {!mobileDrawerOpen && <GiHamburgerMenu />}
@@ -54,7 +55,7 @@ const Navbar = (props: INavbarProps) => {
         >
           <FilledImage
             src="/assets/shared/Logo.png"
-            alt="Speech Shine Logo"
+            alt="Speak & Shine Speech Pathology Logo"
             aspectRatio={ASPECT_RATIO_LOGO}
             height={90}
           />

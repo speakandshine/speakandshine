@@ -32,8 +32,11 @@ function MyApp(props: IMyAppProps) {
   return (
     <>
       <Head>
-        <title>Speak & Shine</title>
-        <meta name="description" content="TODO"></meta>
+        <title>Speak & Shine Speech Pathology</title>
+        <meta
+          name="description"
+          content="Speak & Shine is a Mobile Speech Pathology that diagnoses and treats communication difficulties in children 1 - 18 years. We assess and treat difficulties with speaking, listening, understanding, literacy and social skills. We are mobile, to make speech therapy convenient and easy for parents and children."
+        ></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
           rel="apple-touch-icon"

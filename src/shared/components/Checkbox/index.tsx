@@ -8,16 +8,21 @@ export interface ICheckboxProps {
 const Checkbox = (props: ICheckboxProps) => {
   const { value, checked, onChange, disabled } = props;
   return (
-    <div>
+    <div className="flex items-center space-x-1 my-2">
       <input
         type="checkbox"
         className="focus:outline-primary-yellow cursor-pointer"
+        style={{
+          height: "24px",
+          width: "24px",
+        }}
         checked={checked}
         onChange={onChange}
         value={value}
         disabled={disabled}
+        id={`checkbox-${value}`}
       />
-      <label> {value}</label>
+      <label htmlFor={`checkbox-${value}`}> {value}</label>
     </div>
   );
 };

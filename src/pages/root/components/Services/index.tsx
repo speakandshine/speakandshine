@@ -93,7 +93,7 @@ const Services = (props: IServicesProps) => {
           <FilledImage
             src="/assets/sections/services/speech-therapy.jpg"
             imageStyle={{ borderRadius: "10px" }}
-            alt=""
+            alt="Speech Patholigist mentoring child in a home visit"
             height={300}
             aspectRatio={ASPECT_RATIO_SERVICES_SPEECH_THERAPY}
           />
@@ -108,8 +108,8 @@ const Services = (props: IServicesProps) => {
           complete.
         </div>
         <br />
+        <div>The assessment process includes: </div>
         <ul>
-          The assessment process includes:
           <li className="list-disc ml-[30px]">
             Obtaining a detailed case history through discussion with parents.
           </li>

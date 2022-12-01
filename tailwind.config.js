@@ -25,6 +25,9 @@ module.exports = {
         "book-session-submitted-logo": "50px",
         icon: "50px",
       },
+      fontFamily: {
+        heading: "Comfortaa",
+      },
     },
   },
   plugins: [],

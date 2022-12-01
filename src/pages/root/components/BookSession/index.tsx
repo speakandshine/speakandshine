@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "src/shared/components/Button";
 
-import { AiOutlineFileDone } from "react-icons/ai";
+import { AiFillFacebook, AiOutlineFileDone } from "react-icons/ai";
 import Textfield from "src/shared/components/Textfield";
 import Checkbox from "src/shared/components/Checkbox";
 import Loader from "src/shared/components/Loader";
@@ -343,6 +343,17 @@ const BookSession = (props: IBookSessionProps) => {
                   @speakandshinespeechpathology
                 </div>
               </a>
+              <a
+                className="flex items-center space-x-4 p-[10px] cursor-pointer"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={"https://facebook.com/speakandshinespeechpathology"}
+              >
+                <AiFillFacebook className="text-primary-grey text-[16px] laptop:text-[24px]" />
+                <div className="break-all text-[16px] laptop:text-[24px]">
+                  Speak & Shine Speech Pathology
+                </div>
+              </a>
             </div>
           </div>
           <br />
@@ -360,7 +371,7 @@ const BookSession = (props: IBookSessionProps) => {
             >
               <FilledImage
                 src="/assets/sections/bookSession/map.jpg"
-                alt=""
+                alt="Google Map Screenshot of Marrickville and surrounding subrubs"
                 height={500}
                 aspectRatio={ASPECT_RATIOS_BOOK_SESSION_MAP}
               />
@@ -373,7 +384,7 @@ const BookSession = (props: IBookSessionProps) => {
             >
               <FilledImage
                 src="/assets/sections/bookSession/map.jpg"
-                alt=""
+                alt="Google Map Screenshot of Marrickville and surrounding subrubs"
                 height={250}
                 aspectRatio={ASPECT_RATIOS_BOOK_SESSION_MAP}
               />
