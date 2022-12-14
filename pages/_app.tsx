@@ -1,12 +1,14 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-
 import Head from "next/head";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import Script from "next/script";
-import * as fbq from "src/shared/helpers/facebookPixel";
+import * as fbq from "src/helpers/facebookPixel";
 import { useEffect } from "react";
+import { store } from "src/redux/store";
+import { Provider } from "react-redux";
+import Layout from "src/components/Layout";
 
 interface IMyAppProps extends AppProps {}
 
@@ -58,13 +60,14 @@ function MyApp(props: IMyAppProps) {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
       </Head>
-      <AnimatePresence>
-        {/* Global Site Code Pixel - Facebook Pixel */}
-        <Script
-          id="fb-pixel"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
+      <Provider store={store}>
+        <AnimatePresence>
+          {/* Global Site Code Pixel - Facebook Pixel */}
+          <Script
+            id="fb-pixel"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -75,10 +78,13 @@ function MyApp(props: IMyAppProps) {
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', ${fbq.FB_PIXEL_ID});
           `,
-          }}
-        />
-        <Component {...pageProps} />
-      </AnimatePresence>
+            }}
+          />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </AnimatePresence>
+      </Provider>
     </>
   );
 }

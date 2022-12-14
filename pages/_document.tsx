@@ -1,6 +1,6 @@
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { FB_PIXEL_ID } from "src/shared/helpers/facebookPixel";
+import { FB_PIXEL_ID } from "src/helpers/facebookPixel";
 
 export default class MyDocument extends Document {
   render() {
