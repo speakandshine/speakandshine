@@ -1,1 +1,1 @@
-export { default } from "src/pages/root";
+export { default } from "src/pages/home";
